@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestFoonkie.Xamarin.App">
+    <Application.Resources>
+        <Color x:Key="WhiteColor">#FFFFFF</Color>
+        <Color x:Key="LightBlue">#B3DDD8</Color>
+        <Color x:Key="Blue">#29ABE1</Color>
+        <Color x:Key="Purple">#AAAACC</Color>
+        <Color x:Key="GrayColor">Gray</Color>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
+    </Application.Resources>
+</Application>

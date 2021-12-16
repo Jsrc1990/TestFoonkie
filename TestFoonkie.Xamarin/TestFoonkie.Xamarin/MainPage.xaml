@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestFoonkie.Xamarin.MainPage">
+    <ScrollView>
+        <Grid RowSpacing="0" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+            <!--PANEL VERDE-->
+            <StackLayout Margin="0" Padding="0,0,0,20" Spacing="0" BackgroundColor="{x:StaticResource LightBlue}" Grid.Row="0">
+                <!--LOGO-->
+                <Image Margin="0,40,0,0" Source="Logo" />
+                <Grid Margin="0,20,0,0" HorizontalOptions="Center" WidthRequest="70" HeightRequest="2" BackgroundColor="{x:StaticResource GrayColor}" />
+                <!--TITLE-->
+                <StackLayout Margin="0,20,0,0" HorizontalOptions="Center">
+                    <Label HorizontalTextAlignment="Center" Text="Expert Samurais" FontAttributes="Bold" FontSize="Title" />
+                    <Label HorizontalTextAlignment="Center" Text="on Develop Secure apps"  FontAttributes="Bold" FontSize="Title" />
+                    <Label HorizontalTextAlignment="Center" Text="with Sensitive data."  FontAttributes="Bold" FontSize="Title" />
+                </StackLayout>
+                <!--SUBTITLE-->
+                <StackLayout Margin="0,20,0,0" HorizontalOptions="Center">
+                    <Label HorizontalTextAlignment="Center" Text="We are samurais code monkeys that masters the" FontAttributes="Bold" FontSize="Small" />
+                    <Label HorizontalTextAlignment="Center" Text="most recent data security protocols, encrypted"  FontAttributes="Bold" FontSize="Small" />
+                    <Label HorizontalTextAlignment="Center" Text="methodologies and Blockchain development."  FontAttributes="Bold" FontSize="Small" />
+                </StackLayout>
+                <!--GET IN TOUCH-->
+                <Button Margin="0,20,0,0" Padding="20,0,20,0" HorizontalOptions="Center" Text="Get in Touch!" CornerRadius="20" TextColor="{x:StaticResource LightBlue}" BackgroundColor="{x:StaticResource WhiteColor}" FontAttributes="Bold" />
+            </StackLayout>
+            <!--MONKEY-->
+            <Grid RowSpacing="0" RowDefinitions="65*,35*" Grid.Row="1" Grid.RowSpan="2">
+                <Grid RowSpacing="0" Margin="0" Padding="0" BackgroundColor="{x:StaticResource LightBlue}" Grid.Row="0" />
+                <Grid RowSpacing="0" Margin="0" Padding="0" BackgroundColor="{x:StaticResource Purple}" Grid.Row="1" />
+                <Frame Margin="0,-35,30,0" Padding="0" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="70" HeightRequest="70" CornerRadius="140" Grid.Row="1" />
+            </Grid>
+            <Image Margin="0" Source="Monkey1.png" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.RowSpan="2" />
+            <!--CASE STUDIES-->
+            <StackLayout Margin="0" Padding="0" Spacing="0" BackgroundColor="{x:StaticResource Purple}" HeightRequest="700" Grid.Row="3">
+
+            </StackLayout>            
+            <StackLayout Margin="0" Padding="0" Spacing="0" BackgroundColor="{x:StaticResource Blue}" HeightRequest="700" Grid.Row="4">
+                
+            </StackLayout>
+            <Image Margin="-50,-80,0,0" Source="Monkey2.png" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="4" />
+        </Grid>
+    </ScrollView>
+</ContentPage>
