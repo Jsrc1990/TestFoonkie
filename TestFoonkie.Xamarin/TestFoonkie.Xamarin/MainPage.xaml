@@ -1,42 +1,226 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestFoonkie.Xamarin"
              x:Class="TestFoonkie.Xamarin.MainPage">
+    <ContentPage.Resources>
+        <!--GRIDS-->
+        <Grid x:Key="ActualizacionTramitePeticionGrid" RowSpacing="0" RowDefinitions="Auto,Auto">
+            <Frame Margin="0,10,0,10" Padding="0" CornerRadius="20" BackgroundColor="#E6E3EF" HeightRequest="50" Grid.Row="0" Grid.RowSpan="2" />
+            <Frame Margin="0" Padding="0" CornerRadius="20" BackgroundColor="#E6E3EF" Grid.Row="1">
+                <StackLayout Padding="20">
+                    <Label HorizontalOptions="Center" Text="Digital Platform for Pfizer" FontAttributes="Bold" FontSize="30" />
+                    <Grid Margin="0,5,0,5" HorizontalOptions="Start" WidthRequest="60" HeightRequest="1" BackgroundColor="{x:StaticResource WhiteColor}" />
+                    <Label HorizontalOptions="Center" Text="Give the Hability to the content administrator to create, edit, and delete the desired commercial content in a technological solution, and allow the users to download and work online or offline with the content, were the two main challenges we had." />
+                </StackLayout>
+            </Frame>
+            <Frame Margin="0" Padding="0" CornerRadius="20" BackgroundColor="{x:StaticResource WhiteColor}" Grid.Row="0">
+                <Image Source="Mobile" Aspect="AspectFill" />
+            </Frame>
+        </Grid>
+        <Grid x:Key="ActualizacionTramitePeticionarioGrid" RowSpacing="0" RowDefinitions="Auto,Auto">
+            <Frame Margin="0,10,0,10" Padding="0" CornerRadius="20" BackgroundColor="Yellow" HeightRequest="50" Grid.Row="0" Grid.RowSpan="2" />
+            <Frame Margin="0" Padding="0" CornerRadius="20" BackgroundColor="Yellow" Grid.Row="1">
+                <StackLayout Padding="20">
+                    <Label HorizontalOptions="Center" Text="Digital Platform for Pfizer" FontAttributes="Bold" FontSize="30" />
+                    <Grid Margin="0,5,0,5" HorizontalOptions="Start" WidthRequest="60" HeightRequest="1" BackgroundColor="{x:StaticResource WhiteColor}" />
+                    <Label HorizontalOptions="Center" Text="Give the Hability to the content administrator to create, edit, and delete the desired commercial content in a technological solution, and allow the users to download and work online or offline with the content, were the two main challenges we had." />
+                </StackLayout>
+            </Frame>
+            <Frame Margin="0" Padding="0" CornerRadius="20" BackgroundColor="{x:StaticResource WhiteColor}" Grid.Row="0">
+                <Image Source="Mobile" Aspect="AspectFill" />
+            </Frame>
+        </Grid>
+        <Grid x:Key="ActualizacionTramiteApoderadoGrid" RowSpacing="0" RowDefinitions="Auto,Auto">
+            <Frame Margin="0,10,0,10" Padding="0" CornerRadius="20" BackgroundColor="Blue" HeightRequest="50" Grid.Row="0" Grid.RowSpan="2" />
+            <Frame Margin="0" Padding="0" CornerRadius="20" BackgroundColor="Blue" Grid.Row="1">
+                <StackLayout Padding="20">
+                    <Label HorizontalOptions="Center" Text="Digital Platform for Pfizer" FontAttributes="Bold" FontSize="30" />
+                    <Grid Margin="0,5,0,5" HorizontalOptions="Start" WidthRequest="60" HeightRequest="1" BackgroundColor="{x:StaticResource WhiteColor}" />
+                    <Label HorizontalOptions="Center" Text="Give the Hability to the content administrator to create, edit, and delete the desired commercial content in a technological solution, and allow the users to download and work online or offline with the content, were the two main challenges we had." />
+                </StackLayout>
+            </Frame>
+            <Frame Margin="0" Padding="0" CornerRadius="20" BackgroundColor="{x:StaticResource WhiteColor}" Grid.Row="0">
+                <Image Source="Mobile" Aspect="AspectFill" />
+            </Frame>
+        </Grid>
+        <Grid x:Key="ActualizacionTramiteAfectadoGrid" RowSpacing="0" RowDefinitions="Auto,Auto">
+            <Frame Margin="0,10,0,10" Padding="0" CornerRadius="20" BackgroundColor="Red" HeightRequest="50" Grid.Row="0" Grid.RowSpan="2" />
+            <Frame Margin="0" Padding="0" CornerRadius="20" BackgroundColor="Red" Grid.Row="1">
+                <StackLayout Padding="20">
+                    <Label HorizontalOptions="Center" Text="Digital Platform for Pfizer" FontAttributes="Bold" FontSize="30" />
+                    <Grid Margin="0,5,0,5" HorizontalOptions="Start" WidthRequest="60" HeightRequest="1" BackgroundColor="{x:StaticResource WhiteColor}" />
+                    <Label HorizontalOptions="Center" Text="Give the Hability to the content administrator to create, edit, and delete the desired commercial content in a technological solution, and allow the users to download and work online or offline with the content, were the two main challenges we had." />
+                </StackLayout>
+            </Frame>
+            <Frame Margin="0" Padding="0" CornerRadius="20" BackgroundColor="{x:StaticResource WhiteColor}" Grid.Row="0">
+                <Image Source="Mobile" Aspect="AspectFill" />
+            </Frame>
+        </Grid>
+        <!--INFORMACIÓN DE LA PETICIÓN-->
+        <DataTemplate x:Key="ActualizacionTramitePeticionGridTemplate">
+            <ContentView Content="{x:StaticResource ActualizacionTramitePeticionGrid}" />
+        </DataTemplate>
+        <!--INFORMACIÓN DEL PETICIONARIO-->
+        <DataTemplate x:Key="ActualizacionTramitePeticionarioGridTemplate">
+            <ContentView Content="{x:StaticResource ActualizacionTramitePeticionarioGrid}" />
+        </DataTemplate>
+        <!--INFORMACIÓN DEL APODERADO-->
+        <DataTemplate x:Key="ActualizacionTramiteApoderadoGridTemplate">
+            <ContentView Content="{x:StaticResource ActualizacionTramiteApoderadoGrid}" />
+        </DataTemplate>
+        <!--INFORMACIÓN DEL AFECTADO-->
+        <DataTemplate x:Key="ActualizacionTramiteAfectadoGridTemplate">
+            <ContentView Content="{x:StaticResource ActualizacionTramiteAfectadoGrid}" />
+        </DataTemplate>
+        <!--TEMPLATE SELECTOR-->
+        <local:ActualizacionTramiteTemplateSelector x:Key="ActualizacionTramiteTemplateSelector"
+        A="{x:StaticResource ActualizacionTramitePeticionGridTemplate}"
+        B="{x:StaticResource ActualizacionTramitePeticionarioGridTemplate}"
+        C="{x:StaticResource ActualizacionTramiteApoderadoGridTemplate}"
+        D="{x:StaticResource ActualizacionTramiteAfectadoGridTemplate}" />
+    </ContentPage.Resources>
     <ScrollView>
         <Grid RowSpacing="0" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
             <!--PANEL VERDE-->
-            <StackLayout Margin="0" Padding="0,0,0,20" Spacing="0" BackgroundColor="{x:StaticResource LightBlue}" Grid.Row="0">
+            <StackLayout Margin="0" Padding="0,0,0,20" Spacing="0" BackgroundColor="{x:StaticResource LightBlueColor}" Grid.Row="0">
                 <!--LOGO-->
                 <Image Margin="0,40,0,0" Source="Logo" />
                 <Grid Margin="0,20,0,0" HorizontalOptions="Center" WidthRequest="70" HeightRequest="2" BackgroundColor="{x:StaticResource GrayColor}" />
                 <!--TITLE-->
                 <StackLayout Margin="0,20,0,0" HorizontalOptions="Center">
-                    <Label HorizontalTextAlignment="Center" Text="Expert Samurais" FontAttributes="Bold" FontSize="Title" />
-                    <Label HorizontalTextAlignment="Center" Text="on Develop Secure apps"  FontAttributes="Bold" FontSize="Title" />
-                    <Label HorizontalTextAlignment="Center" Text="with Sensitive data."  FontAttributes="Bold" FontSize="Title" />
+                    <Label HorizontalTextAlignment="Center" Text="Expert Samurais&#10;on Develop Secure apps&#10;with Sensitive data." FontAttributes="Bold" FontSize="Title" />
                 </StackLayout>
                 <!--SUBTITLE-->
                 <StackLayout Margin="0,20,0,0" HorizontalOptions="Center">
-                    <Label HorizontalTextAlignment="Center" Text="We are samurais code monkeys that masters the" FontAttributes="Bold" FontSize="Small" />
-                    <Label HorizontalTextAlignment="Center" Text="most recent data security protocols, encrypted"  FontAttributes="Bold" FontSize="Small" />
-                    <Label HorizontalTextAlignment="Center" Text="methodologies and Blockchain development."  FontAttributes="Bold" FontSize="Small" />
+                    <Label HorizontalTextAlignment="Center" Text="We are samurais code monkeys that masters the&#10;most recent data security protocols, encrypted&#10;methodologies and Blockchain development." FontSize="Small" />
                 </StackLayout>
                 <!--GET IN TOUCH-->
-                <Button Margin="0,20,0,0" Padding="20,0,20,0" HorizontalOptions="Center" Text="Get in Touch!" CornerRadius="20" TextColor="{x:StaticResource LightBlue}" BackgroundColor="{x:StaticResource WhiteColor}" FontAttributes="Bold" />
+                <Button Margin="0,20,0,0" Padding="20,0,20,0" HorizontalOptions="Center" Text="Get in Touch!" TextTransform="None" FontSize="Medium" CornerRadius="20" TextColor="{x:StaticResource BlueColor}" BackgroundColor="{x:StaticResource WhiteColor}" FontAttributes="Bold" />
             </StackLayout>
             <!--MONKEY-->
             <Grid RowSpacing="0" RowDefinitions="65*,35*" Grid.Row="1" Grid.RowSpan="2">
-                <Grid RowSpacing="0" Margin="0" Padding="0" BackgroundColor="{x:StaticResource LightBlue}" Grid.Row="0" />
-                <Grid RowSpacing="0" Margin="0" Padding="0" BackgroundColor="{x:StaticResource Purple}" Grid.Row="1" />
-                <Frame Margin="0,-35,30,0" Padding="0" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="70" HeightRequest="70" CornerRadius="140" Grid.Row="1" />
+                <Grid RowSpacing="0" Margin="0" Padding="0" BackgroundColor="{x:StaticResource LightBlueColor}" Grid.Row="0" />
+                <Grid RowSpacing="0" Margin="0" Padding="0" BackgroundColor="{x:StaticResource PurpleColor}" Grid.Row="1" />
+                <Frame Margin="0,-35,30,0" Padding="0" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="70" HeightRequest="70" CornerRadius="140" Grid.Row="1" BackgroundColor="{x:StaticResource WhiteColor}">
+                    <Image Source="Hamburguer" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="28" HeightRequest="28" Aspect="AspectFit" />
+                </Frame>
             </Grid>
             <Image Margin="0" Source="Monkey1.png" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.RowSpan="2" />
-            <!--CASE STUDIES-->
-            <StackLayout Margin="0" Padding="0" Spacing="0" BackgroundColor="{x:StaticResource Purple}" HeightRequest="700" Grid.Row="3">
-
-            </StackLayout>            
-            <StackLayout Margin="0" Padding="0" Spacing="0" BackgroundColor="{x:StaticResource Blue}" HeightRequest="700" Grid.Row="4">
-                
+            <!--PANEL MORADO-->
+            <StackLayout Margin="0" Padding="0,0,0,120" BackgroundColor="{x:StaticResource PurpleColor}" Grid.Row="3">
+                <Label Margin="60,0,0,0" Text="Case Studies" FontSize="Large" TextColor="{x:StaticResource WhiteColor}" />
+                <Grid Margin="60,0,0,0" HorizontalOptions="Start" WidthRequest="80" HeightRequest="1" BackgroundColor="{x:StaticResource WhiteColor}" />
+                <Grid Margin="0,20,0,0" ColumnDefinitions="Auto,Auto,Auto">
+                    <Button Margin="10,0,10,0" Padding="0" Text="&lt;" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" CornerRadius="80" FontAttributes="Bold" TextColor="{x:StaticResource BlueColor}" BackgroundColor="{x:StaticResource WhiteColor}" Clicked="Atras" Grid.Column="0" />
+                    <CarouselView x:Name="GridsCarousel" Margin="0,10,0,20" HeightRequest="550" VerticalOptions="Center" PeekAreaInsets="0" ItemsSource="{Binding Views}" ItemTemplate="{x:StaticResource ActualizacionTramiteTemplateSelector}" Position="{Binding GridsCarouselPosition, Mode=TwoWay}" CurrentItem="{Binding CurrentView, Mode=TwoWay}" Loop="False" IsSwipeEnabled="False" Grid.Column="1" />
+                    <Button Margin="10,0,10,0" Padding="0" Text="&gt;" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" CornerRadius="80" FontAttributes="Bold" TextColor="{x:StaticResource BlueColor}" BackgroundColor="{x:StaticResource WhiteColor}" Clicked="Siguiente" Grid.Column="2" />
+                </Grid>
+                <Grid RowDefinitions="Auto,Auto" Margin="0,30,0,0">
+                    <!--Pfizer-->
+                    <Grid HorizontalOptions="Center" WidthRequest="50" HeightRequest="1" Grid.Row="0" Grid.Column="0">
+                        <Grid.BackgroundColor>
+                            <MultiBinding Converter="{x:StaticResource ColorSelectionByEnumMultiConverter}" ConverterParameter="ActualizacionTramitePeticionGrid">
+                                <Binding Path="CurrentView" />
+                                <Binding Source="{x:StaticResource GrayColor}" />
+                                <Binding Source="{x:StaticResource TransparentColor}" />
+                            </MultiBinding>
+                        </Grid.BackgroundColor>
+                    </Grid>
+                    <Label HorizontalOptions="Center" Text="Pfizer" FontSize="Medium" FontAttributes="Bold" Grid.Row="1" Grid.Column="0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Opcion_Seleccionada" CommandParameter="0" />
+                        </Label.GestureRecognizers>
+                        <Label.TextColor>
+                            <MultiBinding Converter="{x:StaticResource ColorSelectionByEnumMultiConverter}" ConverterParameter="ActualizacionTramitePeticionGrid">
+                                <Binding Path="CurrentView" />
+                                <Binding Source="{x:StaticResource BlackColor}" />
+                                <Binding Source="{x:StaticResource GrayColor}" />
+                            </MultiBinding>
+                        </Label.TextColor>
+                    </Label>
+                    <!--Takeda-->
+                    <Grid HorizontalOptions="Center" WidthRequest="50" HeightRequest="2" Grid.Row="0" Grid.Column="1">
+                        <Grid.BackgroundColor>
+                            <MultiBinding Converter="{x:StaticResource ColorSelectionByEnumMultiConverter}" ConverterParameter="ActualizacionTramitePeticionarioGrid">
+                                <Binding Path="CurrentView" />
+                                <Binding Source="{x:StaticResource GrayColor}" />
+                                <Binding Source="{x:StaticResource TransparentColor}" />
+                            </MultiBinding>
+                        </Grid.BackgroundColor>
+                    </Grid>
+                    <Label HorizontalOptions="Center" Text="Takeda" FontSize="Medium" FontAttributes="Bold" Grid.Row="1" Grid.Column="1">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Opcion_Seleccionada" CommandParameter="1" />
+                        </Label.GestureRecognizers>
+                        <Label.TextColor>
+                            <MultiBinding Converter="{x:StaticResource ColorSelectionByEnumMultiConverter}" ConverterParameter="ActualizacionTramitePeticionarioGrid">
+                                <Binding Path="CurrentView" />
+                                <Binding Source="{x:StaticResource BlackColor}" />
+                                <Binding Source="{x:StaticResource GrayColor}" />
+                            </MultiBinding>
+                        </Label.TextColor>
+                    </Label>
+                    <!--Boston Scientific Group-->
+                    <Grid HorizontalOptions="Center" WidthRequest="50" HeightRequest="2" Grid.Row="0" Grid.Column="2">
+                        <Grid.BackgroundColor>
+                            <MultiBinding Converter="{x:StaticResource ColorSelectionByEnumMultiConverter}" ConverterParameter="ActualizacionTramiteApoderadoGrid">
+                                <Binding Path="CurrentView" />
+                                <Binding Source="{x:StaticResource GrayColor}" />
+                                <Binding Source="{x:StaticResource TransparentColor}" />
+                            </MultiBinding>
+                        </Grid.BackgroundColor>
+                    </Grid>
+                    <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="Boston Scientific Group" FontSize="Medium" FontAttributes="Bold" Grid.Row="1" Grid.Column="2">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Opcion_Seleccionada" CommandParameter="2" />
+                        </Label.GestureRecognizers>
+                        <Label.TextColor>
+                            <MultiBinding Converter="{x:StaticResource ColorSelectionByEnumMultiConverter}" ConverterParameter="ActualizacionTramiteApoderadoGrid">
+                                <Binding Path="CurrentView" />
+                                <Binding Source="{x:StaticResource BlackColor}" />
+                                <Binding Source="{x:StaticResource GrayColor}" />
+                            </MultiBinding>
+                        </Label.TextColor>
+                    </Label>
+                    <!--BSJI-->
+                    <Grid HorizontalOptions="Center" WidthRequest="50" HeightRequest="2" Grid.Row="0" Grid.Column="3">
+                        <Grid.BackgroundColor>
+                            <MultiBinding Converter="{x:StaticResource ColorSelectionByEnumMultiConverter}" ConverterParameter="ActualizacionTramiteAfectadoGrid">
+                                <Binding Path="CurrentView" />
+                                <Binding Source="{x:StaticResource GrayColor}" />
+                                <Binding Source="{x:StaticResource TransparentColor}" />
+                            </MultiBinding>
+                        </Grid.BackgroundColor>
+                    </Grid>
+                    <Label HorizontalOptions="Center" Text="BSJI" FontSize="Medium" FontAttributes="Bold" Grid.Row="1" Grid.Column="3">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Opcion_Seleccionada" CommandParameter="3" />
+                        </Label.GestureRecognizers>
+                        <Label.TextColor>
+                            <MultiBinding Converter="{x:StaticResource ColorSelectionByEnumMultiConverter}" ConverterParameter="ActualizacionTramiteAfectadoGrid">
+                                <Binding Path="CurrentView" />
+                                <Binding Source="{x:StaticResource BlackColor}" />
+                                <Binding Source="{x:StaticResource GrayColor}" />
+                            </MultiBinding>
+                        </Label.TextColor>
+                    </Label>
+                </Grid>
+            </StackLayout>
+            <!--PANEL AZUL-->
+            <StackLayout Margin="0" Padding="0,0,30,30" Spacing="0" BackgroundColor="{x:StaticResource BlueColor}" Grid.Row="4">
+                <Label Margin="0,30,0,0" HorizontalOptions="End" HorizontalTextAlignment="Center" Text="Let's work&#10;together!" FontAttributes="Bold" TextColor="{x:StaticResource WhiteColor}" FontSize="25" />
+                <Button Margin="0,30,0,0" Padding="10,0,10,0" HorizontalOptions="End" Text="Get in Touch!" TextTransform="None" FontSize="Medium" CornerRadius="20" TextColor="{x:StaticResource BlueColor}" BackgroundColor="{x:StaticResource WhiteColor}" FontAttributes="Bold" />
+                <Grid Margin="0,30,0,0" HorizontalOptions="End" WidthRequest="60" HeightRequest="1" BackgroundColor="{x:StaticResource WhiteColor}" />
+                <Image HorizontalOptions="End" Margin="0,20,0,0" Source="Logo" WidthRequest="140" HeightRequest="140" />
+                <Label Text="Bogotá:" HorizontalOptions="End" TextColor="{x:StaticResource WhiteColor}" FontAttributes="Bold" />
+                <Label Text="Calle 106 # 54-15 of. 307/308" HorizontalOptions="End" TextColor="{x:StaticResource WhiteColor}" />
+                <Label Margin="0,20,0,0" Text="Harpenden, UK:" HorizontalOptions="End" TextColor="{x:StaticResource WhiteColor}" FontAttributes="Bold" />
+                <Label Text="Harpenden Hall, Southdown Rd" HorizontalOptions="End" TextColor="{x:StaticResource WhiteColor}" />
+                <Label Margin="0,20,0,0" Text="Miami, USA:" HorizontalOptions="End" TextColor="{x:StaticResource WhiteColor}" FontAttributes="Bold" />
+                <Label Text="990 Biscayne Blvd #501" HorizontalOptions="End" TextColor="{x:StaticResource WhiteColor}" />
+                <Grid Margin="0,30,0,0" HorizontalOptions="End" WidthRequest="60" HeightRequest="1" BackgroundColor="{x:StaticResource WhiteColor}" />
+                <Label Margin="0,30,0,0" Text="Foonkie Monkey 2021" HorizontalOptions="End" TextColor="{x:StaticResource WhiteColor}" />
             </StackLayout>
             <Image Margin="-50,-80,0,0" Source="Monkey2.png" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="4" />
         </Grid>

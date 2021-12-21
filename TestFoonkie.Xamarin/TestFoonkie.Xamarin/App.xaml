@@ -1,13 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestFoonkie.Xamarin"
              x:Class="TestFoonkie.Xamarin.App">
     <Application.Resources>
+        <!--CONVERTERS-->
+        <local:ColorSelectionByEnumMultiConverter x:Key="ColorSelectionByEnumMultiConverter" />
+        <!--COLORS-->
+        <Color x:Key="TransparentColor">#00000000</Color>
         <Color x:Key="WhiteColor">#FFFFFF</Color>
-        <Color x:Key="LightBlue">#B3DDD8</Color>
-        <Color x:Key="Blue">#29ABE1</Color>
-        <Color x:Key="Purple">#AAAACC</Color>
+        <Color x:Key="BlackColor">Black</Color>
+        <Color x:Key="LightBlueColor">#B3DDD8</Color>
+        <Color x:Key="BlueColor">#29ABE1</Color>
+        <Color x:Key="PurpleColor">#AAAACC</Color>
         <Color x:Key="GrayColor">Gray</Color>
+        <!--CONTROLS-->
         <Style TargetType="Label">
             <Setter Property="TextColor" Value="Black" />
         </Style>
